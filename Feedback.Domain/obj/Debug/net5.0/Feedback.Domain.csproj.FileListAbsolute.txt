@@ -2,7 +2,6 @@ D:\Projects\Questionaries-Application\Feedback-API\Feedback.Api\Feedback.Domain\
 D:\Projects\Questionaries-Application\Feedback-API\Feedback.Api\Feedback.Domain\bin\Debug\net5.0\Feedback.Domain.dll
 D:\Projects\Questionaries-Application\Feedback-API\Feedback.Api\Feedback.Domain\bin\Debug\net5.0\ref\Feedback.Domain.dll
 D:\Projects\Questionaries-Application\Feedback-API\Feedback.Api\Feedback.Domain\bin\Debug\net5.0\Feedback.Domain.pdb
-D:\Projects\Questionaries-Application\Feedback-API\Feedback.Api\Feedback.Domain\obj\Debug\net5.0\Feedback.Domain.csproj.AssemblyReference.cache
 D:\Projects\Questionaries-Application\Feedback-API\Feedback.Api\Feedback.Domain\obj\Debug\net5.0\Feedback.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\Questionaries-Application\Feedback-API\Feedback.Api\Feedback.Domain\obj\Debug\net5.0\Feedback.Domain.AssemblyInfoInputs.cache
 D:\Projects\Questionaries-Application\Feedback-API\Feedback.Api\Feedback.Domain\obj\Debug\net5.0\Feedback.Domain.AssemblyInfo.cs
