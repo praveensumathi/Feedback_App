@@ -2,7 +2,7 @@
 
 namespace Feedback.Domain.Entities
 {
-    public class Answer : BaseEntity
+    public class Answer : BaseEntity 
     {
         public string AnsweredBy { get; set; }
     }
