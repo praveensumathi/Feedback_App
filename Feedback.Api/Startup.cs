@@ -1,4 +1,5 @@
 using Feedback.Application;
+using Feedback.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,10 @@ namespace Feedback.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Feedback API", Version = "v1" });
             });
+
+            #region InfrastructureDependency
+            services.AddInfrastructure(Configuration);
+            #endregion
 
             #region ApplicationDependency
             services.AddApplication(Configuration);

@@ -1,4 +1,4 @@
-﻿using AutoMapper.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,7 +14,7 @@ namespace Feedback.Infrastructure
             #endregion
 
             #region Repositories
-            //services.AddRepositories(configuration);
+            services.AddRepositories(configuration);
             #endregion
 
             return services;

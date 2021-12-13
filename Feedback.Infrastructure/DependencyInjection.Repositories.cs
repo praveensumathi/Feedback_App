@@ -1,6 +1,6 @@
-﻿using AutoMapper.Configuration;
-using Feedback.Application.Common.Contracts.Repositories;
+﻿using Feedback.Application.Common.Contracts.Repositories;
 using Feedback.Infrastructure.Repositories;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Feedback.Infrastructure

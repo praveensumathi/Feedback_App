@@ -14,10 +14,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Event\" />
     <Folder Include="Features\Answer\" />
+    <Folder Include="Features\Event\Commands\" />
+    <Folder Include="Features\Event\Queries\" />
     <Folder Include="Features\QuestionTemplate\" />
     <Folder Include="Features\Question\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Feedback.Domain\Feedback.Domain.csproj" />
   </ItemGroup>
 
 </Project>
