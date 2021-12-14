@@ -1,4 +1,5 @@
 using Feedback.Application;
+using Feedback.Domain.Common.Configurations;
 using Feedback.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,11 +18,17 @@ namespace Feedback.Api
         }
 
         public IConfiguration Configuration { get; }
+        public static IAppSettings AppSettings { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var appSettings = Configuration.Get<AppSettings>();
+            AppSettings = appSettings;
+            services.AddSingleton<IAppSettings>(appSettings);
+
             services.AddControllers();
+            services.AddHttpContextAccessor();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -30,7 +37,7 @@ namespace Feedback.Api
             });
 
             #region InfrastructureDependency
-            services.AddInfrastructure(Configuration);
+            services.AddInfrastructure(Configuration,appSettings);
             #endregion
 
             #region ApplicationDependency

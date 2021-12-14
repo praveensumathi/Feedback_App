@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Feedback.Domain.Common.Configurations;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,10 +8,10 @@ namespace Feedback.Infrastructure
 {
     public static partial class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration, IAppSettings appSettings)
         {
             #region DBConnection
-            services.AddScoped<IDbConnection>(db => new SqlConnection("Server=BSD-PRAVEEN;Database=Questionnaire-app;User Id=sa;password=Password@4321;Trusted_Connection=False;MultipleActiveResultSets=true;"));
+            services.AddScoped<IDbConnection>(db => new SqlConnection(appSettings.ConnectionStrings.DefaultConnection));
             #endregion
 
             #region Repositories

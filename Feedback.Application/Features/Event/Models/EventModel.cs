@@ -1,5 +1,8 @@
-﻿using Feedback.Application.Common.Mappings;
+﻿using Feedback.Application.Common.Constants;
+using Feedback.Application.Common.Mappings;
 using System;
+using System.Globalization;
+using System.Text.Json.Serialization;
 using Entity = Feedback.Domain.Entities;
 
 namespace Feedback.Application.Features.Event.Models
@@ -14,10 +17,11 @@ namespace Feedback.Application.Features.Event.Models
 
         public string Place { get; set; }
 
+        [JsonIgnore]
         public DateTime Date { get; set; }
-
+        [JsonIgnore]
         public TimeSpan StartTime { get; set; }
-
+        [JsonIgnore]
         public TimeSpan EndTime { get; set; }
 
         public string OrganizedBy { get; set; }
@@ -25,5 +29,28 @@ namespace Feedback.Application.Features.Event.Models
         public bool IsPublished { get; set; }
 
         public bool IsFeedbackReceived { get; set; }
+
+        public string StartDate
+        {
+            get
+            {
+                return Date.ToString(ApplicationDate.DateFormat, CultureInfo.InvariantCulture);
+            }
+        }
+
+        public string StartingTime
+        {
+            get
+            {
+                return StartTime.ToString(ApplicationDate.TimeFormat);
+            }
+        }
+        public string EndingTime
+        {
+            get
+            {
+                return EndTime.ToString(ApplicationDate.TimeFormat);
+            }
+        }
     }
 }
